@@ -412,6 +412,13 @@
             width: 350px;
             border-radius: 6mm;
         }
+        .viewer-container {
+            overflow: hidden;
+            width: 100%; /* Adjust this width as necessary */
+        }
+
+
+
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -420,6 +427,10 @@
 </head>
 
 <body class="custom-bg">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.53/build/spline-viewer.js"></script>
+    <div class="viewer-container">
+        <spline-viewer style="height: 500px; width: calc(100% + 500px); margin-left: -250px;" url="https://prod.spline.design/D56b4J3-zxbIgTOx/scene.splinecode"></spline-viewer>
+    </div>
     <section class="hero-section">
         <!-- Your content here -->
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -491,22 +502,22 @@
             <ul id="crds">
                 <li class="crd" id="crd1">
                     <div class="crd-body">
-                        <h2>App 1</h2>
+                        <h2>NavTJ</h2>
                     </div>
                 </li>
                 <li class="crd" id="crd2">
                     <div class="crd-body">
-                        <h2>App 2</h2>
+                        <h2>TJSeniorAssassin</h2>
                     </div>
                 </li>
                 <li class="crd" id="crd3">
                     <div class="crd-body">
-                        <h2>App 3</h2>
+                        <h2>Retwittered</h2>
                     </div>
                 </li>
                 <li class="crd" id="crd4">
                     <div class="crd-body">
-                        <h2>App 4</h2>
+                        <h2>Match Mobile</h2>
                     </div>
                 </li>
             </ul>
