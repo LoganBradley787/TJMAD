@@ -1,622 +1,71 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Recoleta:wght@400&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-
-        .custom-bg {
-            background-color: #0d0d0d;
-            margin: 0;
-            padding: 0;
-        }
-
-
-
-        .navbar {
-            justify-content: center;
-            position: fixed !important;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            /* Adjust the px value to control the blur intensity */
-            border-bottom: 1px solid transparent;
-            /* Set initial transparent border */
-            border-image: linear-gradient(to right, #252525, white, #252525);
-            /* Apply linear gradient */
-            border-image-slice: 1;
-            /* Set border image slice */
-        }
-
-
-        .hero-section {
-            width: 85%;
-            margin: auto;
-            border-radius: 20px;
-            transform: translateY(50px);
-            background: linear-gradient(to bottom, #252525, #0d0d0d, #0d0d0d, #252525);
-            padding: 20px;
-            /* Adjust padding as needed */
-            text-align: center;
-            /* Optional: Center text within hero section */
-            height: 3400px;
-        }
-
-        .navbar-nav {
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            border-radius: 20px;
-        }
-
-        .nav-link {
-            color: #CCCCCC !important;
-            /* Set text color to brown */
-        }
-
-        .nav-item {
-            margin-right: 30px;
-            margin-left: 30px;
-        }
-
-        .title-div {
-            margin: auto;
-            height: 700px;
-
-        }
-
-        .hero-text {
-
-            float: left;
-            width: 50%;
-
-        }
-
-        .hero-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 68px;
-            /* Remove background gradient */
-            color: transparent;
-            /* Adjust animation to use linear gradient */
-            background: linear-gradient(270deg, #f5f4b2, #ffffff);
-            background-size: 400% 400%;
-            animation: AnimationName 15s ease infinite;
-            background-clip: text;
-        }
-
-        @keyframes AnimationName {
-            0% {
-                background-position: 0% 50%
-            }
-
-            50% {
-                background-position: 100% 50%
-            }
-
-            100% {
-                background-position: 0% 50%
-            }
-        }
-
-        .hero-img {
-
-            float: right;
-            width: 45%;
-            height: 600px;
-
-
-        }
-
-        .btn-dark {
-            background-color: #1E1515 !important;
-            width: 200px;
-            border-radius: 30px !important;
-        }
-
-        .portfolio-button {
-            color: #f5f4b2 !important;
-        }
-
-        .hero-descrip {
-            width: 60%;
-            margin: auto;
-            text-align: left;
-            font-family: 'Quicksand', monospace;
-            font-size: 18px;
-            color: #7D7F78;
-        }
-
-        hr.gradient {
-            border: 0;
-            /* Remove default border */
-            height: 1px;
-            /* Set the height of the <hr> */
-            background: linear-gradient(to right, black, white, black);
-            /* Apply linear gradient */
-        }
-
-
-        .hero-image {
-            border-radius: 20px;
-            /* Apply border radius */
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            /* Add black box shadow */
-            display: block;
-            margin: auto;
-            margin-left: 10px;
-            /* Center the image */
-            height: 400px;
-            width: 80%;
-        }
-
-        .hero-redirect {
-            color: rgb(245, 244, 178);
-            text-decoration: none;
-            font-size: 16px;
-            padding: 10px 20px;
-            font-family: "Quicksand", sans-serif;
-            text-align: center;
-
-        }
-
-        .hero-redirect:hover {
-
-            text-decoration: underline;
-            font-family: "Quicksand", sans-serif;
-            text-align: center;
-
-            border-radius: 10px;
-        }
-
-        .events-title {
-            color: transparent;
-            background: linear-gradient(to right, #FFFFF7, #f5f4b2);
-            background-clip: text;
-            font-size: 56px;
-            font-family: 'Recoleta', sans-serif;
-        }
-
-        .events-descrip {
-            width: 40%;
-            margin: auto;
-            text-align: center;
-            font-family: 'Quicksand', monospace;
-            font-size: 18px;
-            color: #7D7F78;
-        }
-
-        :root {
-            --crds: 4;
-            --crdHeight: 50vh;
-            --crdTopPadding: 1.5em;
-            --crdMargin: 4vw;
-        }
-
-        .cont {
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        #crds {
-            list-style: none;
-            padding-left: 0;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(var(--crds), var(--crdHeight));
-            gap: var(--crdMargin);
-            padding-bottom: calc(var(--crds) * var(--crdTopPadding));
-            margin-bottom: var(--crdMargin);
-        }
-
-        #crd1 {
-            --index: 1;
-        }
-
-        #crd2 {
-            --index: 2;
-        }
-
-        #crd3 {
-            --index: 3;
-        }
-
-        #crd4 {
-            --index: 4;
-        }
-
-        .crd {
-            position: sticky;
-            top: 0;
-            padding-top: calc(var(--index) * var(--crdTopPadding));
-        }
-
-        #crd1 .crd-body {
-            background-color: #94928F;
-        }
-
-        #crd2 .crd-body {
-            background-color: #322C1A;
-        }
-
-        #crd3 .crd-body {
-            background-color: #788F69;
-        }
-
-        #crd4 .crd-body {
-            background-color: #44515A;
-        }
-
-        .crd-body {
-            box-sizing: border-box;
-            padding: 30px;
-            border-radius: 50px;
-
-            height: var(--crdHeight);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        body {
-            width: 100%;
-            height: fit-content;
-            margin: 0;
-            padding: 0;
-        }
-
-        .center {
-            width: 100%;
-            height: fit-content;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        .stack-area {
-            width: 100%;
-            height: 300vh;
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .right,
-        .left {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: sticky;
-            top: 0;
-            box-sizing: border-box;
-            flex-basis: 50%;
-        }
-
-        .ocards {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .ocard {
-            width: 350px;
-            height: 350px;
-            box-sizing: border-box;
-            padding: 35px;
-            border-radius: 6mm;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transition: 0.5s ease-in-out;
-            padding: 0 0 0 0;
-        }
-
-        .ocard:nth-child(1) {
-            background: rgb(64, 122, 255);
-            z-index: 4;
-        }
-
-        .ocard:nth-child(2) {
-            background: rgb(221, 62, 88);
-            z-index: 3;
-        }
-
-        .ocard:nth-child(3) {
-            background: rgb(186, 113, 245);
-            z-index: 2;
-        }
-
-        .ocard:nth-child(4) {
-            background: rgb(247, 92, 208);
-            z-index: 1;
-        }
-
-        .sub {
-            font-family: poppins;
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .content {
-            font-family: poppins;
-            font-size: 44px;
-            font-weight: 700;
-            line-height: 54px;
-        }
-
-        .ocard.active {
-            transform-origin: bottom left;
-        }
-
-        .left {
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .sub-title {
-            width: 40%;
-            text-align: center;
-            font-family: 'Quicksand', monospace;
-            font-size: 18px;
-            color: #7D7F78;
-        }
-
-        .sub-title button {
-            font-family: poppins;
-            font-size: 14px;
-            padding: 15px 30px;
-            background: black;
-            color: white;
-            border-radius: 8mm;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        .top,
-        .bottom {
-            width: 100%;
-            height: 100vh;
-            font-family: poppins;
-            font-size: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /*CSS Code for responsiveness*/
-        @media screen and (max-width: 800px) {
-            .left {
-                position: relative;
-                width: 100vw;
-            }
-        }
-
-        .subimg {
-            height: 350px;
-            width: 350px;
-            border-radius: 6mm;
-        }
-        .viewer-container {
-            overflow: hidden;
-            width: 100%; /* Adjust this width as necessary */
-        }
-
-
-
-    </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Albert Sans' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href={% static 'styles.css' %}> <!-- Link to your external CSS file -->
+    <title>TJ MAC</title>
 </head>
-
 <body class="custom-bg">
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.53/build/spline-viewer.js"></script>
-    <div class="viewer-container">
-        <spline-viewer style="height: 500px; width: calc(100% + 500px); margin-left: -250px;" url="https://prod.spline.design/D56b4J3-zxbIgTOx/scene.splinecode"></spline-viewer>
+<section class="hero-section">
+    <div class="nav">
+        <div class="nav-descrip">
+            <div class="nav-img">hi</div>
+            <div class="nav-descrip-text">TJ MOBILE APPS CLUB</div>
+        </div>
+        <div class="nav-main">
+            <ul class="navbar">
+                <li><a href="h">HOME</a></li>
+                <li><a>WHY US</a></li>
+                <li><a>PROJECTS</a></li>
+                <li><a>OFFICERS</a></li>
+            </ul>
+        </div>
+        <div class="nav-subtext">2 0 2 4</div>
     </div>
-    <section class="hero-section">
-        <!-- Your content here -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="../#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../ingredients">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Officers</a>
-                </li>
-            </ul>
-        </nav>
-        <br>
-        <br>
-        <div class="title-div">
-            <div class="hero-text">
-                <br>
-                <br>
-                <h1 class="hero-title">Creating the future.</h1>
-                <h1 class="hero-title">One app at a time.</h1>
-                <br>
-                <br>
-                <button class="btn btn-dark">About Us</button>
-                <br>
-                <br>
-                <hr class="gradient">
-                <br>
-                <p class="hero-descrip">
-                    The TJ Mobile Apps Club (TJMAD) is dedicated to diving into the dynamic world of mobile app
-                    development and innovation. But it's not just about coding; it's about experiencing the thrill of
-                    creation, exploring cutting-edge technologies, and collaborating on exciting projects.
-                </p>
-                <br>
-                <a href="about/" class="hero-redirect">Get Involved ></a>
-            </div>
-            <div class="hero-img">
-                <br>
-                <br>
-                <br>
-                <br>
 
-                <img class='hero-image' src="{%static 'tjmadlogo.png'%}">
-            </div>
+    <!-- Replace .hero-text with SVG -->
+    <img src="{% static 'heroo.svg' %}" class="hero-title"/>
 
-        </div>
+    <h2 class="hero-subtext">This is the TJMAC website. Enjoy your stay.</h2>
+</section>
+<section class="about-section">
+    <div class="about-title">ABOUT US</div>
+    <div class="about-text>">We are a group of students who are passionate about computer science and technology. We are dedicated to learning and creating new things. We are the future of technology.</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
 
 
-        <div class="events-div">
-            <br>
-            <br>
-            <h2 class="events-title">
-                Our Portfolio
-            </h2>
-            <p class="events-descrip">
-                Creating apps is the core of our existence at TJMAD. Our projects are not just assignments; they are our
-                passion, driving us to innovate and excel in the mobile app landscape.
-            </p>
-            <br>
 
-
-        </div>
-        <div class="cont">
-            <ul id="crds">
-                <li class="crd" id="crd1">
-                    <div class="crd-body">
-                        <h2>NavTJ</h2>
-                    </div>
-                </li>
-                <li class="crd" id="crd2">
-                    <div class="crd-body">
-                        <h2>TJSeniorAssassin</h2>
-                    </div>
-                </li>
-                <li class="crd" id="crd3">
-                    <div class="crd-body">
-                        <h2>Retwittered</h2>
-                    </div>
-                </li>
-                <li class="crd" id="crd4">
-                    <div class="crd-body">
-                        <h2>Match Mobile</h2>
-                    </div>
-                </li>
-            </ul>
-
-            <button class="btn btn-dark portfolio-button">Explore Portfolio ></button>
-        </div>
-
-        <div class="center">
-
-            <div class="stack-area">
-                <div class="left">
-                    <div class="events-title">Get Involved</div>
-                    <div class="sub-title">
-                        Have an innovative app idea? Take action by filling out our app idea form!
-                        <br />
-                        <button class="btn portfolio-button">Take Action</button>
-                    </div>
-                </div>
-                <div class="right">
-                    <div class="ocards">
-                        <div class="ocard">
-                            <div class="sub">Step 1 - Click the button</div>
-
-                        </div>
-                        <div class="ocard">
-                            <div class="sub">Step 2 - Fill out form</div>
-
-                        </div>
-                        <div class="ocard">
-                            <div class="sub">Step 3 - Wait</div>
-
-                        </div>
-                        <div class="ocard">
-                            <div class="sub"><img class="subimg" src="{% static 'whopper.jpeg' %}"></div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <script>
-        let ocards = document.querySelectorAll(".ocard");
-        let stackArea = document.querySelector(".stack-area");
-
-        function rotateocards() {
-            let angle = 0;
-            ocards.forEach((ocard) => {
-                if (ocard.classList.contains("active")) {
-                    ocard.style.transform = `translate(-50%, -120vh) rotate(-48deg)`;
-                } else {
-                    ocard.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
-                    angle = angle - 10;
-                }
-            });
-        }
-
-        rotateocards();
-
-        window.addEventListener("scroll", () => {
-            let proportion =
-                stackArea.getBoundingClientRect().top / window.innerHeight;
-            if (proportion <= 0) {
-                let n = ocards.length;
-                let index = Math.ceil((proportion * n) / 2);
-                index = Math.abs(index) - 1;
-                for (let i = 0; i < n; i++) {
-                    if (i <= index) {
-                        ocards[i].classList.add("active");
-                    } else {
-                        ocards[i].classList.remove("active");
-                    }
-                }
-                rotateocards();
-            }
-        });
-
-        //Code for responsiveness
-
-        function adjust() {
-            let windowWidth = window.innerWidth;
-            let left = document.querySelector(".left");
-            left.remove();
-            if (windowWidth < 800) {
-                stackArea.insertAdjacentElement("beforebegin", left);
-            } else {
-                stackArea.insertAdjacentElement("afterbegin", left);
-            }
-        }
-        adjust();
-
-        //detect Resize
-
-        window.addEventListener("resize", adjust);
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
 </body>
-
 </html>
