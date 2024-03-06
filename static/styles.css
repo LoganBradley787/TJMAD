@@ -61,8 +61,16 @@
 
     .nav-img {
         width: 30%;
-        background: black;
+
         height: 100px;
+        display: flex;
+        align-items: center; /* Center content vertically */
+        justify-content: center; /* Center content horizontally */
+    }
+
+    .nav-img-content{
+        width:75%;
+        height: 75%;
     }
 
     .nav-descrip-text {
@@ -113,4 +121,128 @@
     .hero-title{
         height: 70%;
         width: 70%;
+    }
+
+    .about-section {
+        display: flex;
+        flex-direction: row;
+        height: 400px;
+    }
+
+    .about-img-div{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .about-img{
+    height: 75%;
+
+    align-self: center;
+    border-radius: 30px;
+    box-shadow: 0px 0px 25px 3px #EFCFE3; /* Adding border shadow */
+}
+
+    .about-text{
+        width: 50%;
+        height: 100%;
+
+
+    }
+
+    .about-text-title{
+        font-family: 'Wix Madefor Title', sans-serif;
+        font-size: 48px;
+        font-style: normal;
+        text-align: left; /* Center the text horizontally */
+        font-weight: 800;
+        margin-bottom: 1px;
+        color: #EA9AB2;
+
+    }
+    .about-text-descrip{
+        font-family: 'Albert Sans', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        text-align: left; /* Center the text horizontally */
+        width: 60%;
+        color: #EA9AB2;
+
+    }
+
+    .projects-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+    }
+
+    .projects-title-div{
+
+        display: flex;
+        align-content: left;
+        width: 65%;
+    }
+
+    .projects-title{
+        font-family: 'Wix Madefor Title', sans-serif;
+        font-weight: 800px;
+        color: #EFCFE3;
+        font-size: 48px;
+        align-self: left;
+    }
+
+    .project-elements-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 65%;
+
+    }
+
+    .project-elements-row-div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+
+    }
+
+    .project-elements-row-div-title{
+        font-family: 'Albert Sans', sans-serif;
+        font-size: 20px;
+        color: #EFCFE3;
+    }
+    .project-elements-row-div-descrip{
+        font-family: 'Albert Sans', sans-serif;
+        font-size: 16px;
+        color: #EFCFE3;
+    }
+
+    .project-elements-row-div-elem {
+    flex-grow: 1; /* Let the elements grow equally */
+    width: 30%; /* Set a specific width */
+    margin: 0 10px; /* Add margin for spacing */
+}
+
+    #NavTJ{
+
+    }
+
+    #TJSeniorAssassin{
+
+    }
+
+    #Retwittered{
+
     }
